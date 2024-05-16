@@ -1,0 +1,181 @@
+{
+	"TaskName": "PawnTrainer_0",
+	"TrainerMethod": "PPO",
+	"TrainerType": "SharedMemory",
+	"TimeStamp": "2024-05-08_14-23-45",
+	"ExtraSitePackagesPath": "E:/UE_5.4/Engine/Binaries/Win64/",
+	"IntermediatePath": "E:/UnrealEngineProjects/RL_LearningAgents/Intermediate/LearningAgents",
+	"PolicyGuid": "{3995FC07-4EB0-A0A9-7626-DDBB9905E941}",
+	"CriticGuid": "{7D6E6DAD-49D3-B630-8ABC-24ABC210ABA0}",
+	"EncoderGuid": "{64A98C40-4334-6D5B-7B1F-B5A0C9A4B15C}",
+	"DecoderGuid": "{0492311F-4873-CBA6-C58C-7C8B8B6BE484}",
+	"ControlsGuid": "{2E770F36-44B2-9574-04C9-619BDCEF5993}",
+	"EpisodeStartsGuid": "{55DFB68A-418E-E253-5039-9EB4C66E2FE2}",
+	"EpisodeLengthsGuid": "{776DA123-435A-C481-FB5F-D990672F3A30}",
+	"EpisodeCompletionModesGuid": "{4AC22F01-4744-1288-A6E1-C98A85F712B7}",
+	"EpisodeFinalObservationsGuid": "{0B67B1D8-4871-331A-8CF0-E3AD073DB949}",
+	"EpisodeFinalMemoryStatesGuid": "{0523D64D-4003-D06B-2681-ABB9220AD4BC}",
+	"ObservationsGuid": "{8802D7A0-447F-1C84-FE37-1EA49D00573A}",
+	"ActionsGuid": "{1D8A0B7A-4329-D664-F1C3-DFBBB6C5729F}",
+	"MemoryStatesGuid": "{2064C7AD-432F-D6FA-0AF4-4EA55063872C}",
+	"RewardsGuid": "{8FD5559E-4474-05EA-256C-76981E8F804B}",
+	"ObservationSchema":
+	{
+		"VectorSize": 153,
+		"EncodedSize": 153,
+		"Type": "And",
+		"Elements":
+		{
+			"Collision":
+			{
+				"VectorSize": 145,
+				"EncodedSize": 145,
+				"Type": "And",
+				"Elements":
+				{
+					"CollisionCheck":
+					{
+						"VectorSize": 1,
+						"EncodedSize": 1,
+						"Type": "Continuous",
+						"Num": 1,
+						"Index": 0
+					},
+					"Rays":
+					{
+						"VectorSize": 144,
+						"EncodedSize": 144,
+						"Type": "Array",
+						"Num": 36,
+						"Element":
+						{
+							"VectorSize": 4,
+							"EncodedSize": 4,
+							"Type": "And",
+							"Elements":
+							{
+								"RaycastDistanceObservation":
+								{
+									"VectorSize": 1,
+									"EncodedSize": 1,
+									"Type": "Continuous",
+									"Num": 1,
+									"Index": 0
+								},
+								"RaycastLocationObservation":
+								{
+									"VectorSize": 3,
+									"EncodedSize": 3,
+									"Type": "Continuous",
+									"Num": 3,
+									"Index": 1
+								}
+							}
+						},
+						"Index": 1
+					}
+				},
+				"Index": 0
+			},
+			"Goal":
+			{
+				"VectorSize": 4,
+				"EncodedSize": 4,
+				"Type": "And",
+				"Elements":
+				{
+					"GoalDistance":
+					{
+						"VectorSize": 1,
+						"EncodedSize": 1,
+						"Type": "Continuous",
+						"Num": 1,
+						"Index": 0
+					},
+					"GoalLocation":
+					{
+						"VectorSize": 3,
+						"EncodedSize": 3,
+						"Type": "Continuous",
+						"Num": 3,
+						"Index": 1
+					}
+				},
+				"Index": 1
+			},
+			"Pawn":
+			{
+				"VectorSize": 4,
+				"EncodedSize": 4,
+				"Type": "And",
+				"Elements":
+				{
+					"PawnTime":
+					{
+						"VectorSize": 1,
+						"EncodedSize": 1,
+						"Type": "Continuous",
+						"Num": 1,
+						"Index": 0
+					},
+					"PawnVelocity":
+					{
+						"VectorSize": 3,
+						"EncodedSize": 3,
+						"Type": "Continuous",
+						"Num": 3,
+						"Index": 1
+					}
+				},
+				"Index": 2
+			}
+		}
+	},
+	"ActionSchema":
+	{
+		"VectorSize": 3,
+		"DistributionSize": 6,
+		"EncodedSize": 6,
+		"Type": "Continuous",
+		"Num": 3
+	},
+	"ObservationVectorDimensionNum": 153,
+	"ActionVectorDimensionNum": 3,
+	"MemoryStateVectorDimensionNum": 64,
+	"MaxEpisodeNum": 1000,
+	"MaxStepNum": 10000,
+	"PolicyNetworkByteNum": 544824,
+	"CriticNetworkByteNum": 178456,
+	"EncoderNetworkByteNum": 1572,
+	"DecoderNetworkByteNum": 176,
+	"ProcessNum": 1,
+	"IterationNum": 1000000,
+	"LearningRatePolicy": 9.9999997473787516e-05,
+	"LearningRateCritic": 0.0010000000474974513,
+	"LearningRateDecay": 1,
+	"WeightDecay": 9.9999997473787516e-05,
+	"PolicyBatchSize": 1024,
+	"CriticBatchSize": 4096,
+	"PolicyWindow": 16,
+	"IterationsPerGather": 32,
+	"CriticWarmupIterations": 8,
+	"EpsilonClip": 0.20000000298023224,
+	"ActionSurrogateWeight": 1,
+	"ActionRegularizationWeight": 0.0010000000474974513,
+	"ActionEntropyWeight": 0,
+	"ReturnRegularizationWeight": 9.9999997473787516e-05,
+	"GaeLambda": 0.94999998807907104,
+	"AdvantageNormalization": true,
+	"AdvantageMin": 0,
+	"AdvantageMax": 10,
+	"UseGradNormMaxClipping": false,
+	"GradNormMax": 0.5,
+	"TrimEpisodeStartStepNum": 0,
+	"TrimEpisodeEndStepNum": 0,
+	"Seed": 1234,
+	"DiscountFactor": 0.99000000953674316,
+	"Device": "GPU",
+	"UseTensorBoard": true,
+	"SaveSnapshots": false,
+	"LoggingEnabled": true
+}

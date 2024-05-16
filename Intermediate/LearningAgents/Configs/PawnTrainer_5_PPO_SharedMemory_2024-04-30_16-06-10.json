@@ -1,0 +1,183 @@
+{
+	"TaskName": "PawnTrainer_5",
+	"TrainerMethod": "PPO",
+	"TrainerType": "SharedMemory",
+	"TimeStamp": "2024-04-30_16-06-10",
+	"ExtraSitePackagesPath": "E:/UE_5.4/Engine/Binaries/Win64/",
+	"IntermediatePath": "E:/UnrealEngineProjects/RL_LearningAgents/Intermediate/LearningAgents",
+	"PolicyGuid": "{9193DEA8-42AE-E3D2-9790-CAA9F0C09219}",
+	"CriticGuid": "{0D8B0D51-4748-7CE5-519D-DDA148DBAA73}",
+	"EncoderGuid": "{78B1F615-44D3-8FCE-4BD3-01ADFAD1CC86}",
+	"DecoderGuid": "{DEE5FBC4-4C99-2A63-532B-D5B334B51537}",
+	"ControlsGuid": "{BA21A31F-46EA-86D2-91AF-79B0C72C6511}",
+	"EpisodeStartsGuid": "{45A0C94A-4B60-3CAD-DBB1-34A7DD394252}",
+	"EpisodeLengthsGuid": "{6103A97C-4064-CF36-C2DC-A595F88BEFB0}",
+	"EpisodeCompletionModesGuid": "{AFB100FD-4632-99F9-6E47-038938C4E367}",
+	"EpisodeFinalObservationsGuid": "{5F225E16-4A96-C2B8-76C4-0793417F7C79}",
+	"EpisodeFinalMemoryStatesGuid": "{21F69A6D-448F-711F-DF06-5CA3E8C131E7}",
+	"ObservationsGuid": "{BDE176F6-4CF6-CD37-5E3F-60A6FF170E1C}",
+	"ActionsGuid": "{7C6BA5A2-4C4B-3609-149D-DA8069D6C630}",
+	"MemoryStatesGuid": "{D53C83FA-474E-3F2F-882C-4DA49342437A}",
+	"RewardsGuid": "{A518C4BA-4EDF-7297-DDC1-8F8EA305B51F}",
+	"ObservationSchema":
+	{
+		"VectorSize": 45,
+		"EncodedSize": 45,
+		"Type": "And",
+		"Elements":
+		{
+			"Collision":
+			{
+				"VectorSize": 37,
+				"EncodedSize": 37,
+				"Type": "And",
+				"Elements":
+				{
+					"Collision":
+					{
+						"VectorSize": 1,
+						"EncodedSize": 1,
+						"Type": "Continuous",
+						"Num": 1,
+						"Index": 0
+					},
+					"RaysDistances":
+					{
+						"VectorSize": 36,
+						"EncodedSize": 36,
+						"Type": "Array",
+						"Num": 36,
+						"Element":
+						{
+							"VectorSize": 1,
+							"EncodedSize": 1,
+							"Type": "Continuous",
+							"Num": 1
+						},
+						"Index": 1
+					}
+				},
+				"Index": 0
+			},
+			"Goal":
+			{
+				"VectorSize": 4,
+				"EncodedSize": 4,
+				"Type": "And",
+				"Elements":
+				{
+					"GoalDistance":
+					{
+						"VectorSize": 1,
+						"EncodedSize": 1,
+						"Type": "Continuous",
+						"Num": 1,
+						"Index": 0
+					},
+					"GoalLocation":
+					{
+						"VectorSize": 3,
+						"EncodedSize": 3,
+						"Type": "Continuous",
+						"Num": 3,
+						"Index": 1
+					}
+				},
+				"Index": 1
+			},
+			"Pawn":
+			{
+				"VectorSize": 4,
+				"EncodedSize": 4,
+				"Type": "And",
+				"Elements":
+				{
+					"PawnTime":
+					{
+						"VectorSize": 1,
+						"EncodedSize": 1,
+						"Type": "Continuous",
+						"Num": 1,
+						"Index": 0
+					},
+					"PawnVelocity":
+					{
+						"VectorSize": 3,
+						"EncodedSize": 3,
+						"Type": "Continuous",
+						"Num": 3,
+						"Index": 1
+					}
+				},
+				"Index": 2
+			}
+		}
+	},
+	"ActionSchema":
+	{
+		"VectorSize": 2,
+		"DistributionSize": 4,
+		"EncodedSize": 4,
+		"Type": "And",
+		"Elements":
+		{
+			"ActF":
+			{
+				"VectorSize": 1,
+				"DistributionSize": 2,
+				"EncodedSize": 2,
+				"Type": "Continuous",
+				"Num": 1,
+				"Index": 0
+			},
+			"ActR":
+			{
+				"VectorSize": 1,
+				"DistributionSize": 2,
+				"EncodedSize": 2,
+				"Type": "Continuous",
+				"Num": 1,
+				"Index": 1
+			}
+		}
+	},
+	"ObservationVectorDimensionNum": 45,
+	"ActionVectorDimensionNum": 2,
+	"MemoryStateVectorDimensionNum": 64,
+	"MaxEpisodeNum": 1000,
+	"MaxStepNum": 10000,
+	"PolicyNetworkByteNum": 488496,
+	"CriticNetworkByteNum": 123160,
+	"EncoderNetworkByteNum": 1316,
+	"DecoderNetworkByteNum": 416,
+	"ProcessNum": 1,
+	"IterationNum": 1000000,
+	"LearningRatePolicy": 9.9999997473787516e-05,
+	"LearningRateCritic": 0.0010000000474974513,
+	"LearningRateDecay": 1,
+	"WeightDecay": 9.9999997473787516e-05,
+	"PolicyBatchSize": 1024,
+	"CriticBatchSize": 4096,
+	"PolicyWindow": 16,
+	"IterationsPerGather": 32,
+	"CriticWarmupIterations": 8,
+	"EpsilonClip": 0.20000000298023224,
+	"ActionSurrogateWeight": 1,
+	"ActionRegularizationWeight": 0.0010000000474974513,
+	"ActionEntropyWeight": 0,
+	"ReturnRegularizationWeight": 9.9999997473787516e-05,
+	"GaeLambda": 0.94999998807907104,
+	"AdvantageNormalization": true,
+	"AdvantageMin": 0,
+	"AdvantageMax": 10,
+	"UseGradNormMaxClipping": false,
+	"GradNormMax": 0.5,
+	"TrimEpisodeStartStepNum": 0,
+	"TrimEpisodeEndStepNum": 0,
+	"Seed": 1234,
+	"DiscountFactor": 0.99000000953674316,
+	"Device": "GPU",
+	"UseTensorBoard": true,
+	"SaveSnapshots": false,
+	"LoggingEnabled": true
+}

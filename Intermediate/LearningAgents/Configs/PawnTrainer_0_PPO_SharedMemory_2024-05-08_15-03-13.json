@@ -1,0 +1,163 @@
+{
+	"TaskName": "PawnTrainer_0",
+	"TrainerMethod": "PPO",
+	"TrainerType": "SharedMemory",
+	"TimeStamp": "2024-05-08_15-03-13",
+	"ExtraSitePackagesPath": "E:/UE_5.4/Engine/Binaries/Win64/",
+	"IntermediatePath": "E:/UnrealEngineProjects/RL_LearningAgents/Intermediate/LearningAgents",
+	"PolicyGuid": "{BEE87F8A-4A0D-8DC2-B2A2-7CA02B064F99}",
+	"CriticGuid": "{200B0F34-46BB-9074-86C4-92B43934DEEE}",
+	"EncoderGuid": "{DB4D2240-425E-C500-A7DC-21A911E10D96}",
+	"DecoderGuid": "{C259418C-4BB0-0B14-D759-E8AD4AC47920}",
+	"ControlsGuid": "{599BD898-4642-3275-A974-00B8786B5A16}",
+	"EpisodeStartsGuid": "{11BC2CB1-4F78-935F-2C93-88ABED6511A4}",
+	"EpisodeLengthsGuid": "{9B5D9411-40EB-E660-A7F8-3A8761A23FA8}",
+	"EpisodeCompletionModesGuid": "{A7814FB9-4F6D-29A6-355B-48909F58FBA0}",
+	"EpisodeFinalObservationsGuid": "{6FF3878D-4C99-3E4C-EF15-308D8F8B78DF}",
+	"EpisodeFinalMemoryStatesGuid": "{0803395D-4D06-3A79-D64E-D1B29A7F1F9E}",
+	"ObservationsGuid": "{DB11D511-41AF-9A8D-96BF-0E9F9F242B75}",
+	"ActionsGuid": "{7AC35D9E-4707-C066-0A67-C7A3766E7018}",
+	"MemoryStatesGuid": "{C85B40F5-4A8C-9692-3DD7-168BCDC1DE07}",
+	"RewardsGuid": "{7E21C3EC-48F8-14A2-2973-419ADCD920E7}",
+	"ObservationSchema":
+	{
+		"VectorSize": 45,
+		"EncodedSize": 45,
+		"Type": "And",
+		"Elements":
+		{
+			"Collision":
+			{
+				"VectorSize": 37,
+				"EncodedSize": 37,
+				"Type": "And",
+				"Elements":
+				{
+					"CollisionCheck":
+					{
+						"VectorSize": 1,
+						"EncodedSize": 1,
+						"Type": "Continuous",
+						"Num": 1,
+						"Index": 0
+					},
+					"Rays":
+					{
+						"VectorSize": 36,
+						"EncodedSize": 36,
+						"Type": "Array",
+						"Num": 36,
+						"Element":
+						{
+							"VectorSize": 1,
+							"EncodedSize": 1,
+							"Type": "Continuous",
+							"Num": 1
+						},
+						"Index": 1
+					}
+				},
+				"Index": 0
+			},
+			"Goal":
+			{
+				"VectorSize": 4,
+				"EncodedSize": 4,
+				"Type": "And",
+				"Elements":
+				{
+					"GoalDistance":
+					{
+						"VectorSize": 1,
+						"EncodedSize": 1,
+						"Type": "Continuous",
+						"Num": 1,
+						"Index": 0
+					},
+					"GoalLocation":
+					{
+						"VectorSize": 3,
+						"EncodedSize": 3,
+						"Type": "Continuous",
+						"Num": 3,
+						"Index": 1
+					}
+				},
+				"Index": 1
+			},
+			"Pawn":
+			{
+				"VectorSize": 4,
+				"EncodedSize": 4,
+				"Type": "And",
+				"Elements":
+				{
+					"PawnTime":
+					{
+						"VectorSize": 1,
+						"EncodedSize": 1,
+						"Type": "Continuous",
+						"Num": 1,
+						"Index": 0
+					},
+					"PawnVelocity":
+					{
+						"VectorSize": 3,
+						"EncodedSize": 3,
+						"Type": "Continuous",
+						"Num": 3,
+						"Index": 1
+					}
+				},
+				"Index": 2
+			}
+		}
+	},
+	"ActionSchema":
+	{
+		"VectorSize": 3,
+		"DistributionSize": 6,
+		"EncodedSize": 6,
+		"Type": "Continuous",
+		"Num": 3
+	},
+	"ObservationVectorDimensionNum": 45,
+	"ActionVectorDimensionNum": 3,
+	"MemoryStateVectorDimensionNum": 64,
+	"MaxEpisodeNum": 1000,
+	"MaxStepNum": 10000,
+	"PolicyNetworkByteNum": 489528,
+	"CriticNetworkByteNum": 123160,
+	"EncoderNetworkByteNum": 1316,
+	"DecoderNetworkByteNum": 176,
+	"ProcessNum": 1,
+	"IterationNum": 1000000,
+	"LearningRatePolicy": 9.9999997473787516e-05,
+	"LearningRateCritic": 0.0010000000474974513,
+	"LearningRateDecay": 1,
+	"WeightDecay": 9.9999997473787516e-05,
+	"PolicyBatchSize": 1024,
+	"CriticBatchSize": 4096,
+	"PolicyWindow": 16,
+	"IterationsPerGather": 32,
+	"CriticWarmupIterations": 8,
+	"EpsilonClip": 0.20000000298023224,
+	"ActionSurrogateWeight": 1,
+	"ActionRegularizationWeight": 0.0010000000474974513,
+	"ActionEntropyWeight": 0,
+	"ReturnRegularizationWeight": 9.9999997473787516e-05,
+	"GaeLambda": 0.94999998807907104,
+	"AdvantageNormalization": true,
+	"AdvantageMin": 0,
+	"AdvantageMax": 10,
+	"UseGradNormMaxClipping": false,
+	"GradNormMax": 0.5,
+	"TrimEpisodeStartStepNum": 0,
+	"TrimEpisodeEndStepNum": 0,
+	"Seed": 1234,
+	"DiscountFactor": 0.99000000953674316,
+	"Device": "GPU",
+	"UseTensorBoard": true,
+	"SaveSnapshots": false,
+	"LoggingEnabled": true
+}
